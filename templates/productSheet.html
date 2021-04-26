@@ -21,26 +21,40 @@
     </header>
 
     <main>
-        <div class="bg-dark d-flex justify-content-center align-content-center pt-5 pb-5">
+        
+        <div class="bg-dark d-block p-5 flex-column justify-content-center align-content-center pt-5 pb-5">
  
-            <div id="results" class="container row row-cols-1 row-cols-md-3 g-4 justify-content-lg-center">
-                <div class="col">
-                  <div class="card h-100 border-white border-5">
-                    <img id="imgProduct" src="" class="card-img-top" alt="...">
+            
+            <div class="card mb-5 mx-auto" style="max-width: 540px;">
+                <div class="row g-0">
+                    <img id="imgProduct" src="" alt="...">
+                  <div class="col-md-8">
                     <div class="card-body">
-                      <h5 id="titleProduct" class="card-title"></h5>
-                      <p id="descriptionProduct" class="card-text"></p>
+                      <h5 id="titleProduct" class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle bg-white border-dark text-dark border-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Options
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div>
+                      <p class="card-text"></p>
                     </div>
                   </div>
                 </div>
-            </div> 
+            </div>
+            <a href="../index.html" class="btn btn-primary mx-auto">retours</a>
+            
         </div>
              
-            <a href="/templates/productSheet.html">ici</a>
  
     </main> 
 
-<script src="Js/index.js"></script>
+<script src="../Js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 </body>
