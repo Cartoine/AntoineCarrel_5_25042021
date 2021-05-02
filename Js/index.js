@@ -1,40 +1,30 @@
-const imgProduct = document.getElementById('imgProduct');
-const titleProduct = document.getElementById('titleProduct');
-const descriptionProduct = document.getElementById('descriptionProduct');
+const description = document.querySelectorAll('.cameraDescription')
+const imageUrl = document.querySelectorAll('.imageUrl')
+const lenses = document.querySelectorAll('.lenses')
+const cameraName = document.querySelectorAll('.cameraName');
+const prices = document.querySelectorAll('.cameraPrices');
+let resultFromAPI;
 
-let dataContents;
+ async function CallAPI(){
+    await fetch(`http://localhost:3000/api/cameras`)
+    .then(responce => responce.json())
+    .then(data => {
 
-const fetchDataContent = async() => {
-    dataContents = await fetch('http://localhost:3000/api/cameras')
-.then(responce => responce.json())
-// console.log(dataContent)
+        resultFromAPI = data
+        // console.log(resultFromAPI)
+        for(let i in resultFromAPI){
+            // console.log(resultFromAPI[i]);
+            description[i].innerText = resultFromAPI[i].description;
+            imageUrl[i].src = resultFromAPI[i].imageUrl;
+            cameraName[i].innerText = resultFromAPI[i].name;
+            prices[i].innerText = `${resultFromAPI[i].price.toString().slice(0, -2)},00 € `;
+
+            console.log(prices[i].innerText);
+        }
+    })    
 }
 
-const showDataContent = async() => {
-    await fetchDataContent();
+// const prix = '123456';
+// console.log(prix.slice(1,-2))
 
-    results.innerHTML = (
-
-        dataContents.filter(datacontent => datacontent.name)
-        .map(datacontent => (
-            `
-                <div class="col">
-                    <div class="card h-100 border-white border-5">
-                      <img id="img4" src="${datacontent.imageUrl}" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 id="title4" class="card-title">${datacontent.name}</h5>
-                        <p id="text4" class="card-text">${datacontent.description}</p>
-                        <button type="button" class="btn btn-dark rounded-pill" onClick='window.location.href="/templates/productSheet.html"'>${datacontent.price}</button>
-                      </div>
-                    </div>
-                </div>
-            `
-        )).join()
-    )
-}
-showDataContent();
-
-
-fetch('http://localhost:3000/api/cameras')
-.then(responce => responce.json())
-.then(data => imgProduct.src = data[0].imageUrl)
+CallAPI()
