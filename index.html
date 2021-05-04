@@ -2,41 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="img/beer.ico"> -->
+    <link rel="stylesheet" href="./css/fontawesome/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>Orinoco</title>
+
+    <title>Document</title>
 </head>
 <body>
     <header>
-        <nav class="nav bg-dark border-bottom p-4 d-flex align-content-center">
+        <nav class="nav bg-grey p-4 d-flex align-content-center ">
             <a class="navbar-brand" href="#">
                 <img src="img/logo.png" width="150" height="auto" alt="">
               </a>
             <a class="nav-link active" aria-current="page" href="#">Active</a>
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="home.html">New Home</a>
             <a class="nav-link" href="#">Link</a>
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </nav>
     </header>
-    <div class="bg-dark pt-5 pb-5 d-flex align-content-center ">
+
+    <div class="bg-grey d-flex align-content-center justify-content-center containerSlider">
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./img/cadie.png" class="d-block w-100 SliderImageUrl" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/cadie.png" class="d-block w-100 SliderImageUrl" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/cadie.png" class="d-block w-100 SliderImageUrl" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/cadie.png" class="d-block w-100 SliderImageUrl" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/cadie.png" class="d-block w-100 SliderImageUrl" alt="...">
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>  
+    <div class="band">
+        <div class="badgeContaineur">
+            <i class="fas fa-camera-retro"></i>
+            <p class="navbar-brand">Appareil retro</p>
+        </div>
+        <div class="badgeContaineur">
+            <i class="fas fa-certificate"></i>
+            <p class="navbar-brand">Qualité authentique</p>
+        </div>
+        <div class="badgeContaineur">
+            <i class="fas fa-globe-americas"></i>
+            <p class="navbar-brand">Expédition mondial</p>
+        </div>
+    </div>
+
+    <div class="bg-grey pt-5 pb-5 d-flex align-content-center ">
 
         <div class="container d-flex flex-wrap justify-content-center">
 
             <!-- Card number 1 -->
-            <div class="card m-3" style="width: 18rem;">
-                <img class="card-img-top imageUrl" src="./img/beer.ico" alt="Card image cap">
+            <div class="card m-3">
+                <img class="card-img-top imageUrl" src="./img/cadie.png" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title cameraName">Card title</h5>
-                  <p class="card-text cameraDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="./templates/productSheet.html" id="cardOne" class="btn btn-primary cameraPrices">Go somewhere</a>
+                  <h5 class="card-title cameraName"></h5>
+                  <p class="card-text cameraDescription"></p>
+                  <a href="./templates/productSheet.html" id="cardOne" class="btn btn-primary cameraPrices"></a>
                 </div>
             </div>
 
             <!-- Card number 2 -->
-            <div class="card m-3" style="width: 18rem;">
-                <img class="card-img-top imageUrl" src="./img/beer.ico" alt="Card image cap">
+            <div class="card m-3">
+                <img class="card-img-top imageUrl" src="./img/cadie.png" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title cameraName"></h5>
                   <p class="card-text cameraDescription"></p>
@@ -45,8 +93,8 @@
             </div>
 
             <!-- Card number 3 -->
-            <div class="card m-3" style="width: 18rem;">
-                <img class="card-img-top imageUrl" src="./img/beer.ico" alt="Card image cap">
+            <div class="card m-3">
+                <img class="card-img-top imageUrl" src="./img/cadie.png" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title cameraName"></h5>
                   <p class="card-text cameraDescription"></p>
@@ -55,8 +103,8 @@
             </div>
 
             <!-- Card number 4 -->
-            <div class="card m-3" style="width: 18rem;">
-                <img class="card-img-top imageUrl" src="./img/beer.ico" alt="Card image cap">
+            <div class="card m-3">
+                <img class="card-img-top imageUrl" src="./img/cadie.png" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title cameraName"></h5>
                   <p class="card-text cameraDescription"></p>
@@ -66,7 +114,7 @@
 
             <!-- Card number 5 -->
             <div class="card m-3" style="width: 18rem;">
-                <img class="card-img-top imageUrl" src="./img/beer.ico" alt="Card image cap">
+                <img class="card-img-top imageUrl" src="./img/cadie.png" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title cameraName"></h5>
                   <p class="card-text cameraDescription"></p>
@@ -76,10 +124,7 @@
             
         </div>
     </div>
-        
-        
-        
-        
+
 <script src="Js/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>

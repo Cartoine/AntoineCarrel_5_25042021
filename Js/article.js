@@ -23,12 +23,13 @@ async function taMere(){
             //probleme viens de la recupération des data de L'API
 
             if(localStorage.id === "cardOne") {
-                
+
                     description[0].innerText = resultFromAPI[0].description;
                     imageUrl[0].src = resultFromAPI[0].imageUrl;
                     cameraName[0].innerText = resultFromAPI[0].name;
                     prices[0].innerText = `${resultFromAPI[0].price.toString().slice(0, -2)},00 € `;
-                
+                    // lenses[0].innerText = resultFromAPI[0].lenses;
+
                 } else
                  if(localStorage.id === "cardTwo"){
 

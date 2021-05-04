@@ -1,0 +1,55 @@
+header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+}
+.containerSlider {
+  padding-top: 150px;
+}
+.bg-grey {
+  background-color: #1b1b1b;
+}
+.fas {
+  color: #fff;
+  font-size: 24px;
+  padding-right: 10px;
+  margin-top: 5px;
+}
+.card {
+  width: 18rem;
+}
+.carousel-item,
+.slide {
+  width: 80vw;
+  max-height: 60vh !important;
+  height: 60vh;
+  background-color: #1b1b1b;
+}
+.SliderImageUrl {
+  border-radius: 30px;
+}
+.band {
+  margin-top: -40px;
+  height: 100px;
+  width: 80%;
+  background-color: #1b1b1b;
+  border-radius: 0px 15px 0px 0px;
+  /* z-index: 10000000000 !important; */
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+}
+.navbar-brand {
+  margin-top: 5px;
+  font-size: 1vw !important;
+}
+.badgeContaineur {
+  margin-top: 10px;
+  display: flex;
+  align-items: top;
+  color: #fff;
+}
+.cameraPrices {
+  background-color: #1b1b1b !important;
+  border: none !important;
+}
