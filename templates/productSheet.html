@@ -9,7 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <title>Document</title>
-</head><body>
+</head>
+
+<body class="bg-grey">
   <header>
     <nav class="nav bg-grey p-4 d-flex align-content-center ">
         <a class="navbar-brand" href="../index.html">
@@ -21,45 +23,41 @@
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </nav>
 </header>
-    <main class="">
-        
-      <div class="bg-grey d-flex align-content-center justify-content-center containerSlider">
- 
-            
-            <!-- <div class="card mb-5 mx-auto" style="max-width: 540px;"> -->
-              <div class="card mb-3 w-75 p-1">
+    <main class="bg-grey d-flex align-content-center justify-content-center containerSlider h-100">            
+              <div class="card mb-3 w-50 p-1 h-50">
                 <div class="row g-0">
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <img id="test" class="card-img imageUrl" src="../img/cadie.png" alt="Card image cap">
+                    <div class="dropdown justify-content-center d-flex mt-3 mb-3">
+                      <button class="btn btn-grey dropdown-toggle text-white" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                       choix de l'objectif
+                      </button>
+                      <ul id="myListe" class="dropdown-menu dropdown-menu-dark " aria-labelledby="dropdownMenuButton2">
+                        <li id="lensesOne" class="lense dropdown-item"></li>
+                        <li id="lensesTwo" class="lense dropdown-item"></li>
+                        <li id="lensesThree" class="lense dropdown-item"></li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-6">
                     <div class="card-body">
                       <h5 class="card-title cameraName"></h5>
                       <p class="card-text cameraDescription"></p>
                       <p class="card-text cameraPrices"></p>
-                      <p class="lense"></p>
-                      <p class="lense"></p>
-                      <p class="lense"></p>
+
+                      <div  class="d-flex flex-column justify-content-center mt-5">
+                        <h3>Option choisie</h3>
+                         <p id="choise" class="lenseChoise">Choisir un objectif</p>
+
+                        </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- <div class="card m-3" style="width: 18rem;">
-              <img id="test" class="card-img-top imageUrl" src="../img/beer.ico" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title cameraName">Card title</h5>
-                <p class="card-text cameraDescription">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary cameraPrices">Go somewhere</a>
-              </div> -->
-          <!-- </div> -->
-      
-        </div>
-             
- 
     </main> 
-<script type="module" src="../Js/article.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    
+    <script type="module" src="../Js/article.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ async function CallAPI() {
                 description[i].innerText = resultFromAPI[i].description;
                 imageUrl[i].src = resultFromAPI[i].imageUrl;
                 cameraName[i].innerText = resultFromAPI[i].name;
-                prices[i].innerText = `${(resultFromAPI[i].price/1000).toFixed(2)} €`;
+                prices[i].innerText = `${(resultFromAPI[i].price/100).toFixed(2)} €`;
             }
         })
 }
@@ -43,6 +43,6 @@ let btnCard = function()
     document.getElementById('cardFour').onclick = btnCard;
     document.getElementById('cardFive').onclick = btnCard;
 }
-
+btnCard()
 SliderHeader()
 CallAPI()
