@@ -59,3 +59,10 @@ header {
   font-size: 40px;
   padding-top: 40px;
 }
+
+.text-with {
+  color: #fff;
+}
+.text-grey {
+  color: #1b1b1b;
+}

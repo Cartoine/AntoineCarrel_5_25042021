@@ -22,22 +22,26 @@ let lensesArray
 const productInCard = {
     titre : cameraName,
     prix: prices,
-    lense: lenses
+    lense: lenses,
+    img: imageUrl
 }
 const addToCard = document.getElementById('addToCard').addEventListener("click", function() {
     console.log(productInCard)
     productInCard.titre = cameraName[0].innerHTML,
     productInCard.prix = prices[0].textContent,
     productInCard.lense = document.getElementById('choise').innerText
+    productInCard.img = imageUrl[0].src
 
     console.log(productInCard)
 
     localStorage.setItem("Camera_name", productInCard.titre)
     localStorage.setItem("Price", productInCard.prix = prices[0].textContent)
     localStorage.setItem("lense", document.getElementById('choise').innerText)
+    localStorage.setItem("image", document.getElementById('imageUrl').src)
 
-    this.onclick(inde)
+    // this.onclick()
 })
+
 async function OneCard(){
 
     await fetch(`http://localhost:3000/api/cameras`)

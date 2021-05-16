@@ -27,7 +27,7 @@
               <div class="card mb-3 w-50 p-1 h-50">
                 <div class="row g-0">
                   <div class="col-md-6">
-                    <img id="test" class="card-img imageUrl" src="../img/cadie.png" alt="Card image cap">
+                    <img id="imageUrl" class="card-img imageUrl" src="../img/cadie.png" alt="Card image cap">
                     <div class="dropdown justify-content-center d-flex mt-3 mb-3">
                       <button class="btn btn-grey dropdown-toggle text-white" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                        choix de l'objectif
@@ -41,7 +41,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="card-body">
-                      <h5 class="card-title cameraName"></h5>
+                      <h5 id="titre" class="card-title cameraName"></h5>
                       <p class="card-text cameraDescription"></p>
                       <p class="card-text cameraPrices"></p>
                       <div  class="d-flex flex-row justify-content-evenly align-content-end mt-5">
@@ -49,7 +49,9 @@
                           <h3>Option choisie</h3>
                           <p id="choise" class="lenseChoise">Choisir un objectif</p>
                         </div>
-                        <i id="addToCard" class="fas fa-cart-plus addToCard"></i>
+                        <a href="cart.html">
+                          <i id="addToCard" class="fas fa-cart-plus addToCard"></i>
+                        </a>
                       </div>
                   </div>
                 </div>
