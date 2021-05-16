@@ -4,6 +4,18 @@ const lenses = document.querySelectorAll('.lense');
 const cameraName = document.querySelectorAll('.cameraName');
 const prices = document.querySelectorAll('.cameraPrices');
 
+const lensesOne = document.getElementById("lensesOne").addEventListener("click", function() {
+    document.getElementById("choise").innerHTML = document.getElementById('lensesOne').textContent;
+});
+const lensesTwo = document.getElementById("lensesTwo").addEventListener("click", function() {
+    document.getElementById("choise").innerHTML = document.getElementById('lensesTwo').textContent;
+});
+const lensesThree = document.getElementById("lensesThree").addEventListener("click", function() {
+    document.getElementById("choise").innerHTML = document.getElementById('lensesThree').textContent;
+});
+
+const choise = document.getElementById('choise');
+const choiseResult = choise.innerHTML
 let resultFromAPI;
 let lensesArray
 
@@ -82,22 +94,23 @@ async function OneCard(){
             
         })
 
+    }    
+
+    const productInCard = {
+        titre : cameraName,
+        prix: prices,
+        lense: lenses
     }
+    
+    // console.log(productInCard)
+    const addToCard = document.getElementById('addToCard').addEventListener("click", function() {
+        // console.log(productInCard)
+        productInCard.titre = cameraName,
+        productInCard.prix = prices,
+        productInCard.lense = document.getElementById('choise').innerText
+        console.log(productInCard)
+    })
 
-
-    
-    const lensesOne = document.getElementById("lensesOne").addEventListener("click", function() {
-        document.getElementById("choise").innerHTML = document.getElementById('lensesOne').textContent;
-    });
-    const lensesTwo = document.getElementById("lensesTwo").addEventListener("click", function() {
-        document.getElementById("choise").innerHTML = document.getElementById('lensesTwo').textContent;
-    });
-    const lensesThree = document.getElementById("lensesThree").addEventListener("click", function() {
-        document.getElementById("choise").innerHTML = document.getElementById('lensesThree').textContent;
-    });
-    
-    const choise = document.getElementById('choise');
-    
 OneCard()
 
 //check de verication 

@@ -9,7 +9,7 @@ header {
 .bg-grey {
   background-color: #1b1b1b;
 }
-.fas {
+.icon {
   color: #fff;
   font-size: 24px;
   padding-right: 10px;
@@ -52,4 +52,10 @@ header {
 .btn-grey {
   background-color: #1b1b1b !important;
   border: none !important;
+}
+
+.addToCard {
+  color: #1b1b1b;
+  font-size: 40px;
+  padding-top: 40px;
 }
