@@ -19,8 +19,25 @@ const choiseResult = choise.innerHTML
 let resultFromAPI;
 let lensesArray
 
+const productInCard = {
+    titre : cameraName,
+    prix: prices,
+    lense: lenses
+}
+const addToCard = document.getElementById('addToCard').addEventListener("click", function() {
+    console.log(productInCard)
+    productInCard.titre = cameraName[0].innerHTML,
+    productInCard.prix = prices[0].textContent,
+    productInCard.lense = document.getElementById('choise').innerText
 
+    console.log(productInCard)
 
+    localStorage.setItem("Camera_name", productInCard.titre)
+    localStorage.setItem("Price", productInCard.prix = prices[0].textContent)
+    localStorage.setItem("lense", document.getElementById('choise').innerText)
+
+    this.onclick(inde)
+})
 async function OneCard(){
 
     await fetch(`http://localhost:3000/api/cameras`)
@@ -89,29 +106,15 @@ async function OneCard(){
                     }
                 
                 } else {
+                    alert("retourner a l'acceuil \net choisir un produit")
                     console.log("contacter l'équipe")
                 }
             
         })
 
     }    
-
-    const productInCard = {
-        titre : cameraName,
-        prix: prices,
-        lense: lenses
-    }
     
-    // console.log(productInCard)
-    const addToCard = document.getElementById('addToCard').addEventListener("click", function() {
-        // console.log(productInCard)
-        productInCard.titre = cameraName,
-        productInCard.prix = prices,
-        productInCard.lense = document.getElementById('choise').innerText
-        console.log(productInCard)
-    })
-
-OneCard()
+    OneCard()
 
 //check de verication 
 // panier = tableau 
