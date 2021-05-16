@@ -15,9 +15,10 @@ const lensesThree = document.getElementById("lensesThree").addEventListener("cli
 });
 
 const choise = document.getElementById('choise');
-const choiseResult = choise.innerHTML
+const choiseResult = 'Choisir un objectif'
 let resultFromAPI;
 let lensesArray
+
 
 const productInCard = {
     titre : cameraName,
@@ -26,20 +27,25 @@ const productInCard = {
     img: imageUrl
 }
 const addToCard = document.getElementById('addToCard').addEventListener("click", function() {
-    console.log(productInCard)
     productInCard.titre = cameraName[0].innerHTML,
     productInCard.prix = prices[0].textContent,
-    productInCard.lense = document.getElementById('choise').innerText
     productInCard.img = imageUrl[0].src
-
-    console.log(productInCard)
+    productInCard.lense = document.getElementById('choise').innerText
 
     localStorage.setItem("Camera_name", productInCard.titre)
     localStorage.setItem("Price", productInCard.prix = prices[0].textContent)
-    localStorage.setItem("lense", document.getElementById('choise').innerText)
     localStorage.setItem("image", document.getElementById('imageUrl').src)
 
-    // this.onclick()
+    if(choise.innerHTML === choiseResult){
+        alert('chosir un objectif')
+    }
+    else if (choise.innerHTML === ''){
+        alert('chosir un objectif')
+    }
+    else{
+        localStorage.setItem("lense", document.getElementById('choise').innerText)
+        window.open('cart.html')
+    }
 })
 
 async function OneCard(){
@@ -56,7 +62,6 @@ async function OneCard(){
                     cameraName[0].innerText = resultFromAPI[0].name;
                     prices[0].innerText = `${(resultFromAPI[0].price/1000).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[0].lenses.length; i++){
-                        // console.log(i)
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
                   
@@ -69,7 +74,6 @@ async function OneCard(){
                     cameraName[0].innerText = resultFromAPI[1].name;
                     prices[0].innerText = `${(resultFromAPI[1].price/1000).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[1].lenses.length; i++){
-                        // console.log(i)
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
 
@@ -81,7 +85,6 @@ async function OneCard(){
                     cameraName[0].innerText = resultFromAPI[2].name;
                     prices[0].innerText = `${(resultFromAPI[2].price/1000).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[2].lenses.length; i++){
-                        // console.log(i)
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
                    
@@ -93,7 +96,6 @@ async function OneCard(){
                     cameraName[0].innerText = resultFromAPI[3].name;
                     prices[0].innerText = `${(resultFromAPI[3].price/1000).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[3].lenses.length; i++){
-                        // console.log(i)
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
                 
@@ -105,13 +107,11 @@ async function OneCard(){
                     cameraName[0].innerText = resultFromAPI[4].name;
                     prices[0].innerText = `${(resultFromAPI[4].price/1000).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[4].lenses.length; i++){
-                        // console.log(i)
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
                 
                 } else {
                     alert("retourner a l'acceuil \net choisir un produit")
-                    console.log("contacter l'équipe")
                 }
             
         })
