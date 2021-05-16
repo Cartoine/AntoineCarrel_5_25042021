@@ -56,8 +56,10 @@ header {
 
 .addToCard {
   color: #1b1b1b;
+  margin: 0px;
   font-size: 40px;
   padding-top: 40px;
+  margin-top: -20px;
 }
 
 .text-with {
