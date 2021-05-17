@@ -61,7 +61,7 @@ async function OneCard(){
                     description[0].innerText = resultFromAPI[0].description;
                     imageUrl[0].src = resultFromAPI[0].imageUrl;
                     cameraName[0].innerText = resultFromAPI[0].name;
-                    prices[0].innerText = `${(resultFromAPI[0].price/1000).toFixed(2)} €`;
+                    prices[0].innerText = `${(resultFromAPI[0].price/100).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[0].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
@@ -75,7 +75,7 @@ async function OneCard(){
                     description[0].innerText = resultFromAPI[1].description;
                     imageUrl[0].src = resultFromAPI[1].imageUrl;
                     cameraName[0].innerText = resultFromAPI[1].name;
-                    prices[0].innerText = `${(resultFromAPI[1].price/1000).toFixed(2)} €`;
+                    prices[0].innerText = `${(resultFromAPI[1].price/100).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[1].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
@@ -88,7 +88,7 @@ async function OneCard(){
                     description[0].innerText = resultFromAPI[2].description;
                     imageUrl[0].src = resultFromAPI[2].imageUrl;
                     cameraName[0].innerText = resultFromAPI[2].name;
-                    prices[0].innerText = `${(resultFromAPI[2].price/1000).toFixed(2)} €`;
+                    prices[0].innerText = `${(resultFromAPI[2].price/100).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[2].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
@@ -101,7 +101,7 @@ async function OneCard(){
                     description[0].innerText = resultFromAPI[3].description;
                     imageUrl[0].src = resultFromAPI[3].imageUrl;
                     cameraName[0].innerText = resultFromAPI[3].name;
-                    prices[0].innerText = `${(resultFromAPI[3].price/1000).toFixed(2)} €`;
+                    prices[0].innerText = `${(resultFromAPI[3].price/100).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[3].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
@@ -114,7 +114,7 @@ async function OneCard(){
                     description[0].innerText = resultFromAPI[4].description;
                     imageUrl[0].src = resultFromAPI[4].imageUrl;
                     cameraName[0].innerText = resultFromAPI[4].name;
-                    prices[0].innerText = `${(resultFromAPI[4].price/1000).toFixed(2)} €`;
+                    prices[0].innerText = `${(resultFromAPI[4].price/100).toFixed(2)} €`;
                     for(let i = 0; i<resultFromAPI[4].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }

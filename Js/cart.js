@@ -6,6 +6,7 @@ const lense = localStorage.getItem('lense');
 const cameraId = localStorage.getItem('camera_id')
 
 const contact = {}
+let responseFromAPI;
 
 function setDataStorage() {
   
@@ -17,36 +18,39 @@ function setDataStorage() {
   }
   setDataStorage()
 
-
 const addPaiement = document.getElementById('buy').addEventListener('click', function() {
-    
-    // console.log(document.getElementById('validationDefault01').value)
-    // console.log(document.getElementById('validationDefault02').value)
-    // console.log(document.getElementById('inputAddress').value)
-    // console.log(document.getElementById('validationDefault03').value)
-    // console.log(document.getElementById('inputEmail4').value)
-    const contact = {
-        firstName: document.getElementById('validationDefault01').value,
-        lastName: document.getElementById('validationDefault02').value,
-        address: document.getElementById('inputAddress').value,
-        city: document.getElementById('validationDefault03').value,
-        email: document.getElementById('inputEmail4').value,
-        product_id: cameraId
-    
-    }
-    // const product = cameraId0
+
+    let newOrder = {
+    contact : {
+        firstName: "document.getElementById('validationDefault01').value",
+        lastName: "document.getElementById('validationDefault02').value",
+        address: "document.getElementById('inputAddress').value",
+        city: "document.getElementById('validationDefault03').value",
+        email: "document.getElementById('inputEmail4').value"
+    },
+    products: [
+        localStorage.getItem('camera_id')
+    ]
+}
+console.log(newOrder)
     console.table(contact) 
+    const postData = fetch("http://localhost:3000/api/cameras/order", {
+
+    method: "POST",
+    body: JSON.stringify(newOrder),
+    headers: {
+        "Content-Type" : "application/json"
+    }
 })
 
+async function promise(){
+   await postData.then(response => response = response.json())
+//    .then(data => data = console.log(data))
+   .then(data => {
+       responseFromAPI = data
+    })
+    console.table(responseFromAPI)
+}
 
-// console.log(contact)
-//   contact: {
-//     *   firstName: string,
-//     *   lastName: string,
-//     *   address: string,
-//     *   city: string,
-//     *   email: string
-//     * }
-//     * products: [string] <-- array of product _id
-
-//choper L'ID du produit et le mettre dans le local storage et envoyer a l'API
+promise()
+})
