@@ -3,6 +3,7 @@ const imageUrl = document.querySelectorAll('.imageUrl');
 const lenses = document.querySelectorAll('.lense');
 const cameraName = document.querySelectorAll('.cameraName');
 const prices = document.querySelectorAll('.cameraPrices');
+let cameraId;
 
 const lensesOne = document.getElementById("lensesOne").addEventListener("click", function() {
     document.getElementById("choise").innerHTML = document.getElementById('lensesOne').textContent;
@@ -64,7 +65,9 @@ async function OneCard(){
                     for(let i = 0; i<resultFromAPI[0].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
-                  
+                    cameraId = resultFromAPI[0]._id
+                    localStorage.setItem("camera_id", cameraId)
+                    console.table(cameraId)
 
                 } else
                  if(localStorage.id === "cardTwo"){
@@ -76,6 +79,8 @@ async function OneCard(){
                     for(let i = 0; i<resultFromAPI[1].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
+                    cameraId = resultFromAPI[1]._id
+                    localStorage.setItem("camera_id", cameraId)
 
                 } else
                  if(localStorage.id === "cardThree"){
@@ -87,6 +92,8 @@ async function OneCard(){
                     for(let i = 0; i<resultFromAPI[2].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
+                    cameraId = resultFromAPI[2]._id
+                    localStorage.setItem("camera_id", cameraId)
                    
                 } else
                  if(localStorage.id === "cardFour"){
@@ -98,6 +105,8 @@ async function OneCard(){
                     for(let i = 0; i<resultFromAPI[3].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
+                    cameraId = resultFromAPI[3]._id
+                    localStorage.setItem("camera_id", cameraId)
                 
                 } else
                  if(localStorage.id === "cardFive"){
@@ -109,6 +118,8 @@ async function OneCard(){
                     for(let i = 0; i<resultFromAPI[4].lenses.length; i++){
                         lenses[i].textContent = resultFromAPI[i].lenses[0];
                     }
+                    cameraId = resultFromAPI[4]._id
+                    localStorage.setItem("camera_id", cameraId)
                 
                 } else {
                     alert("retourner a l'acceuil \net choisir un produit")

@@ -3,12 +3,10 @@ const cameraName = localStorage.getItem('Camera_name');
 const price = localStorage.getItem('Price');
 const imgUrl = localStorage.getItem('image');
 const lense = localStorage.getItem('lense');
+const cameraId = localStorage.getItem('camera_id')
 
-// const firstName = document.getElementById('validationDefault01').value
-// console.log(firstName)
-const contact = {
+const contact = {}
 
-}
 function setDataStorage() {
   
     document.getElementById('cameraName').innerHTML = cameraName;
@@ -32,9 +30,12 @@ const addPaiement = document.getElementById('buy').addEventListener('click', fun
         lastName: document.getElementById('validationDefault02').value,
         address: document.getElementById('inputAddress').value,
         city: document.getElementById('validationDefault03').value,
-        email: document.getElementById('inputEmail4').value
+        email: document.getElementById('inputEmail4').value,
+        product_id: cameraId
+    
     }
-    console.log(contact)
+    // const product = cameraId0
+    console.table(contact) 
 })
 
 
