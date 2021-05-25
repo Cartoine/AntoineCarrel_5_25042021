@@ -1,59 +1,112 @@
 header {
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
+  background-color: #1b1b1b;
+  /* height: 100px; */
 }
-.containerSlider {
-  padding-top: 150px;
+
+body {
+  background-color: #1b1b1bf5 !important;
 }
+
+a {
+  text-decoration: none !important;
+}
+
 .bg-grey {
   background-color: #1b1b1b;
 }
+
+.containerSlider {
+  padding-top: 20px;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerSlider h1 {
+  color: #fff;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.productBrand {
+  text-align: center;
+}
+
 .icon {
   color: #fff;
-  font-size: 24px;
+  font-size: 18px !important;
   padding-right: 10px;
   margin-top: 5px;
 }
+
 .card {
   width: 18rem;
 }
+
+.carousel {
+  background-color: transparent;
+  width: 30% !important;
+  min-height: 100% !important;
+}
+
 .carousel-item,
 .slide {
-  width: 80vw;
-  max-height: 60vh !important;
-  height: 60vh;
-  background-color: #1b1b1b;
-}
-.SliderImageUrl {
+  min-height: 100% !important;
   border-radius: 30px;
 }
-.band {
-  margin-top: -40px;
-  height: 100px;
-  width: 80%;
-  background-color: #1b1b1b;
-  border-radius: 0px 15px 0px 0px;
-  /* z-index: 10000000000 !important; */
-  position: absolute;
-  display: flex;
-  justify-content: space-around;
+
+.SliderImageUrl {
+  border-radius: 30px;
+  min-height: 100% !important;
+  height: 250px !important;
 }
+
 .navbar-brand {
   margin-top: 5px;
-  font-size: 1vw !important;
+  font-size: 12px !important;
 }
+
 .badgeContaineur {
   margin-top: 10px;
   display: flex;
   align-items: top;
   color: #fff;
 }
+/* ProductSheet page */
+
+.containerProduct {
+  color: #fff;
+  display: flex;
+  padding: 20px 100px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
 .btn-grey {
   background-color: #1b1b1b !important;
   border: none !important;
 }
 
+.addTo {
+  color: #fff;
+  margin: 0px;
+  font-size: 40px;
+  padding-top: 40px;
+  margin-top: -20px;
+}
+
+.addTo:hover {
+  color: #1b1b1bf5;
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+  margin: 0px;
+  font-size: 40px;
+  padding-top: 40px;
+  margin-top: -20px;
+}
+
+/* je sais pas ce que ca fout la */
 .addToCard {
   color: #1b1b1b;
   margin: 0px;
@@ -62,9 +115,51 @@ header {
   margin-top: -20px;
 }
 
+.fas {
+  font-size: 40px;
+}
+
 .text-with {
   color: #fff;
 }
 .text-grey {
   color: #1b1b1b;
+}
+
+/* Logo header */
+
+.headerLogo {
+  width: 150px;
+}
+
+.navHeader {
+  display: flex;
+  /* background-color: aqua; */
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.btn-outline-success {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.btn-outline-success:hover {
+  /* border-color: #fff !important; */
+  color: #1b1b1b !important;
+  background-color: #fff !important;
+}
+
+table {
+  background-color: #fff;
+}
+
+footer {
+  background-color: #1b1b1b;
+  /* display: flex; */
+  justify-content: space-between;
+  /* width: 100%;
+  position: absolute; */
+  bottom: 0px;
+  color: #fff !important;
 }

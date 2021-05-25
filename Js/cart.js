@@ -1,25 +1,26 @@
 // const cameraName = document.getElementById('cameraName')
-const cameraName = localStorage.getItem('Camera_name');
-const price = localStorage.getItem('Price');
-const imgUrl = localStorage.getItem('image');
-const lense = localStorage.getItem('lense');
-const cameraId = localStorage.getItem('camera_id')
+// const cameraName = localStorage.getItem('Camera_name');
+// const price = localStorage.getItem('Price');
+// const imgUrl = localStorage.getItem('image');
+// const lense = localStorage.getItem('lense');
+// const cameraId = localStorage.getItem('camera_id')
 
 const contact = {}
 let responseFromAPI;
 
 function setDataStorage() {
   
-    document.getElementById('cameraName').innerHTML = cameraName;
-    document.getElementById('price').innerHTML = price;
-    document.getElementById('imageUrl').src = imgUrl;
-    document.getElementById('lense').innerHTML = `${'Objectif : ' + lense}`;
+    document.getElementById('cameraName').innerHTML = localStorage.getItem('Camera_name');
+    document.getElementById('price').innerHTML = localStorage.getItem('Price');
+    document.getElementById('imageUrl').src = localStorage.getItem('image');
+    document.getElementById('lense').innerHTML = localStorage.getItem('lense');
   
   }
   setDataStorage()
 
 const addPaiement = document.getElementById('buy').addEventListener('click', function() {
 
+    //création de mon objet a Envoyé vers l'API
     let newOrder = {
     contact : {
         firstName: "document.getElementById('validationDefault01').value",
@@ -32,9 +33,8 @@ const addPaiement = document.getElementById('buy').addEventListener('click', fun
         localStorage.getItem('camera_id')
     ]
 }
-console.log(newOrder)
-    console.table(contact) 
-    const postData = fetch("http://localhost:3000/api/cameras/order", {
+    //création d'une constante avec l'URL de l'API qui est en POST
+const postData = fetch("http://localhost:3000/api/cameras/order", {
 
     method: "POST",
     body: JSON.stringify(newOrder),
@@ -44,13 +44,22 @@ console.log(newOrder)
 })
 
 async function promise(){
+    //attends la reponce de l'API et transforme cette rponce en json
    await postData.then(response => response = response.json())
 //    .then(data => data = console.log(data))
+// cette reponce et Stocker dans une variable
    .then(data => {
        responseFromAPI = data
     })
-    console.table(responseFromAPI)
+    console.log(responseFromAPI)
+    localStorage.setItem("order", JSON.stringify(responseFromAPI))
 }
 
 promise()
+window.open('ticket.html')
+//gestion de la validation du Formulaire
+//faire une redirectionn
 })
+
+// let test = localStorage.getItem('order')
+// console.log(test)
