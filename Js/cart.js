@@ -1,7 +1,15 @@
 import {storageParse, camera_one, camera_two, camera_three, camera_four, camera_five } from "./call.js"
 
+const reload = document.getElementById("btnReload").addEventListener("click", function() {
+    localStorage.removeItem('camera One');
+    localStorage.removeItem('camera Two');
+    localStorage.removeItem('camera Three');
+    localStorage.removeItem('camera Four');
+    localStorage.removeItem('camera Five');
+    location.reload()
+});
+
 const storageCameraOne = JSON.parse(localStorage.getItem("camera One"))
-console.log(storageCameraOne)
 const storageCameraTwo = JSON.parse(localStorage.getItem("camera Two"))
 const storageCameraThree = JSON.parse(localStorage.getItem("camera Three"))
 const storageCameraFour = JSON.parse(localStorage.getItem("camera Four"))
@@ -194,11 +202,9 @@ const postData = fetch("http://localhost:3000/api/cameras/order", {
 async function promise(){
         //attends la reponce de l'API et transforme cette rponce en json
        await postData.then(response => response = response.json())
-    //    .then(data => data = console.log(data))
     // cette reponce et Stocker dans une variable
        .then(data => {
            responseFromAPI = data
-           console.log(data)
         })
         localStorage.setItem("order", JSON.stringify(responseFromAPI))
     }

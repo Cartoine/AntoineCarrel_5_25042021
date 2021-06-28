@@ -1,8 +1,4 @@
 import {storageParse, camera_one, camera_two, camera_three, camera_four, camera_five } from "./call.js"
-// window.location.reload(true);
-// document.location.reload();
-
-
 
 const description = document.getElementById("cameraDescription");
 const imageUrl = document.getElementById("imageUrl");
@@ -94,21 +90,15 @@ const showAddToCard = document.getElementById('addToCard');
 const lensesOne = document.getElementById("lensesOne").addEventListener("click", function() {
     document.getElementById("choise").innerHTML = document.getElementById('lensesOne').textContent;
     showAddToCard.style.display = "block"
-    document.getElementById('lensesTwo').style.display = "none" 
-    document.getElementById('lensesThree').style.display = "none" 
 });
 const lensesTwo = document.getElementById("lensesTwo").addEventListener("click", function() {
     document.getElementById("choise").innerHTML = document.getElementById('lensesTwo').textContent;
     showAddToCard.style.display = "block"
-    document.getElementById('lensesOne').style.display = "none" 
-    document.getElementById('lensesThree').style.display = "none" 
 
 });
 const lensesThree = document.getElementById("lensesThree").addEventListener("click", function() {
     document.getElementById("choise").innerHTML = document.getElementById('lensesThree').textContent;
     showAddToCard.style.display = "block"
-    document.getElementById('lensesOne').style.display = "none" 
-    document.getElementById('lensesTwo').style.display = "none" 
 });
 
 
@@ -135,7 +125,6 @@ if (getClickedCardId === camera_one._id){
         showCount.textContent = cameraObject.toCard.addOneMore
 
         i = cameraObject.toCard.addOneMore 
-        console.log(i)
         if(i >= 1 ){
             showRemoveItem.style.display = "block"
         }
@@ -150,7 +139,6 @@ else if (getClickedCardId === camera_two._id){
         showCount.textContent = cameraObject.toCard.addOneMore
 
         i = cameraObject.toCard.addOneMore 
-        console.log(i)
         if(i >= 1 ){
             showRemoveItem.style.display = "block"
         }
@@ -165,7 +153,6 @@ else if (getClickedCardId === camera_three._id){
         showCount.textContent = cameraObject.toCard.addOneMore
 
         i = cameraObject.toCard.addOneMore 
-        console.log(i)
         if(i >= 1 ){
             showRemoveItem.style.display = "block"
         }
@@ -180,7 +167,6 @@ else if (getClickedCardId === camera_four._id){
         showCount.textContent = cameraObject.toCard.addOneMore
 
         i = cameraObject.toCard.addOneMore 
-        console.log(i)
         if(i >= 1 ){
             showRemoveItem.style.display = "block"
         }
@@ -195,7 +181,6 @@ else if (getClickedCardId === camera_five._id){
         showCount.textContent = cameraObject.toCard.addOneMore
 
         i = cameraObject.toCard.addOneMore 
-        console.log(i)
         if(i >= 1 ){
             showRemoveItem.style.display = "block"
         }
@@ -213,7 +198,6 @@ function removeItemes(){
         showCount.textContent = cameraObject.toCard.addOneMore
 
         i = cameraObject.toCard.addOneMore 
-        console.log(i)
         if(i === 0 ){
             showRemoveItem.style.display = "none"
             localStorage.removeItem('camera One');
@@ -228,7 +212,6 @@ function removeItemes(){
          showCount.textContent = cameraObject.toCard.addOneMore
 
          i = cameraObject.toCard.addOneMore 
-         console.log(i)
          if(i === 0 ){
              showRemoveItem.style.display = "none"
              localStorage.removeItem('camera Two');
@@ -243,7 +226,6 @@ function removeItemes(){
          showCount.textContent = cameraObject.toCard.addOneMore
 
          i = cameraObject.toCard.addOneMore 
-         console.log(i)
          if(i === 0 ){
              showRemoveItem.style.display = "none"
              localStorage.removeItem('camera Three');
@@ -258,7 +240,6 @@ function removeItemes(){
          showCount.textContent = cameraObject.toCard.addOneMore
 
          i = cameraObject.toCard.addOneMore 
-         console.log(i)
          if(i === 0 ){
              showRemoveItem.style.display = "none"
              localStorage.removeItem('camera Four');
@@ -273,7 +254,6 @@ function removeItemes(){
          showCount.textContent = cameraObject.toCard.addOneMore
 
          i = cameraObject.toCard.addOneMore 
-         console.log(i)
          if(i === 0 ){
              showRemoveItem.style.display = "none"
              localStorage.removeItem('camera Five');
@@ -283,161 +263,3 @@ function removeItemes(){
 }
 AddToCard()
 removeItemes()
-
-// function removeItemes(){
-//     click.addToCard.quantity --;
-//     localStorage.setItem('add more camera', JSON.stringify(click))
-//     showCount.textContent = click.addToCard.quantity
-    
-//     let i = click.addToCard.quantity
-//     if(i === 0){
-//         showRemoveItem.style.display = "none"
-//     }
-// }
-
-// console.log(cameraObject)
-
-// const showRemoveItem = document.getElementsByClassName("fa-minus-square")[0]
-// const showCount = document.getElementById("count")
-// const addToCard =  document.getElementById("addToCard").addEventListener("click", AddToCard);
-// const removeItems = document.getElementById("removeItems").addEventListener("click", removeItemes);
-
-// let objo
-
-// let click = {
-//     addToCard : {
-//         quantity : 0,
-//         lense: objo,
-//         id: getClickedCardId
-//     },
-//     product: localStorage.getItem('clicked Card')
-// }
-//     let add 
-//     objo = localStorage.getItem('lense')
-        
-//         let camera = {
-//             addToCard : {
-//             quantity : add,
-//             lense: objo,
-//             id: getClickedCardId
-//         },
-//         product: localStorage.getItem('clicked Card')
-//         }
-
-// function AddToCard() {
-    
-//     if(getClickedCardId === camera_one._id){
-
-//         let add = click.addToCard.quantity ++;
-//         objo = localStorage.getItem('lense')
-        
-//         let camera = {
-//             addToCard : {
-//             quantity : add,
-//             lense: objo,
-//             id: getClickedCardId
-//         },
-//         product: localStorage.getItem('clicked Card')
-//         }
-
-//         localStorage.setItem('camera One', JSON.stringify(camera))
-//         showCount.textContent = click.addToCard.quantity
-      
-
-//         let i = click.addToCard.quantity
-//         if(i >= 1){
-//             showRemoveItem.style.display = "block"
-//         }
-//     }
-//     else if(getClickedCardId === camera_two._id){
-//         let add = click.addToCard.quantity ++;
-//         objo = localStorage.getItem('lense')
-        
-//         let camera = {
-//             addToCard : {
-//             quantity : add,
-//             lense: objo,
-//             id: getClickedCardId
-//         },
-//         product: localStorage.getItem('clicked Card')
-//         }
-
-//         localStorage.setItem('camera Two', JSON.stringify(camera))
-//         showCount.textContent = click.addToCard.quantity
-//         // console.log(click.addToCard.quantity)
-//         let i = click.addToCard.quantity
-//         if(i >= 1){
-//             showRemoveItem.style.display = "block"
-//         }
-   
-//     }
-//     else if(getClickedCardId === camera_three._id){
-//         let add = click.addToCard.quantity ++;
-//         objo = localStorage.getItem('lense')
-        
-//         let camera = {
-//             addToCard : {
-//             quantity : add,
-//             lense: objo,
-//             id: getClickedCardId
-//         },
-//         product: localStorage.getItem('clicked Card')
-//         }
-
-//         localStorage.setItem('camera Three', JSON.stringify(camera))
-//         showCount.textContent = click.addToCard.quantity
-//         // console.log(click.addToCard.quantity)
-//         let i = click.addToCard.quantity
-//         if(i >= 1){
-//             showRemoveItem.style.display = "block"
-//         }
-        
-//     }
-//     else if(getClickedCardId === camera_four._id){
-//         let add = click.addToCard.quantity ++;
-//         objo = localStorage.getItem('lense')
-        
-//         let camera = {
-//             addToCard : {
-//             quantity : add,
-//             lense: objo,
-//             id: getClickedCardId
-//         },
-//         product: localStorage.getItem('clicked Card')
-//         }
-
-//         localStorage.setItem('camera Four', JSON.stringify(camera))
-//         showCount.textContent = click.addToCard.quantity
-//         // console.log(click.addToCard.quantity)
-//         let i = click.addToCard.quantity
-//         if(i >= 1){
-//             showRemoveItem.style.display = "block"
-//         }
-        
-//     }
-//     else if(getClickedCardId === camera_five._id){
-//         click.addToCard.quantity ++;
-//         click.addToCard.lense;
-
-//         localStorage.setItem('camera Five', JSON.stringify(camera))
-//         showCount.textContent = click.addToCard.quantity
-//         // console.log(click.addToCard.quantity)
-//         let i = click.addToCard.quantity
-//         if(i >= 1){
-//             showRemoveItem.style.display = "block"
-//         }
-        
-//     }
-// }
-
-// function removeItemes(){
-//     click.addToCard.quantity --;
-//     localStorage.setItem('add more camera', JSON.stringify(click))
-//     showCount.textContent = click.addToCard.quantity
-    
-//     let i = click.addToCard.quantity
-//     if(i === 0){
-//         showRemoveItem.style.display = "none"
-//     }
-// }
-// // debug cette merde !!! 

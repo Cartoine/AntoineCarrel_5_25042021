@@ -39,7 +39,6 @@ const price = document.getElementById('price')
 const picture = document.getElementById('picture')
 
 if(storageCameraOne !== null){
-    // console.log(storageCameraOne.addToCard.id)
     
      const createTdAricle = document.createElement('p')
      const createTdOption = document.createElement('p')

@@ -17,7 +17,6 @@ for (let i in storageParse) {
 const cardOne = document.getElementById("cardOne").addEventListener('click', function(){
     localStorage.setItem('cameraId', camera_one._id)
 })
-console.log(cardOne)
 
 const cardTwo = document.getElementById("cardTwo").addEventListener('click', function(){
     localStorage.setItem('cameraId', camera_two._id)
