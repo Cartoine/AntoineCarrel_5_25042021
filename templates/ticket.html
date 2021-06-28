@@ -13,77 +13,97 @@
 
 <body class="bg-grey">
     <header>
-        <nav>
+        <nav class="navHeader">
             <a href="../index.html">
-                <img src="./img/logo.png" class="headerLogo" alt="">
+                <img src="../img/logo.png" class="headerLogo" alt="">
             </a>
-            <a href="#">
-                <i class="fas fa-cart-plus text-white "></i>
-            </a>
+            <!-- <a href="./cart.html">
+            <div class="cadi">
+              <span id="count" class="badge shopping">0</span>
+            </div>
+          </a> -->
+          <a href="../index.html">
+            <button id="btnReload" class="btn btn-light" >Commander à nouveau</button>
+          </a>
+
         </nav>
     </header>
   
-    <main class="bg-danger align-content-center justify-content-center containerSlider">            
-            <div class="card m-5 h-50">
-        
-                <table class="table">
-                    <div class="bg-light">
-                        <strong><p>Infos Client</p></strong>
-                    </div>
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Prénom</th>
-                            <th scope="col">Adresse</th>
-                            <th scope="col">Ville</th>
-                            <th scope="col">CP</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Antoine</td>
-                            <td>Carrel</td>
-                            <td>6 bis passage du bief</td>
-                            <td>Caen</td>
-                            <td>14000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card m-5 h-50 col">
-                <table class="table">
-                    <div class="bg-light">
-                        <p>N° de commande: <strong><span id="orderNumber"></span></strong></p>
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Appareils</th>
-                            <th scope="col">Objectif</th>
-                            <th scope="col">Prix</th>
-                            <th scope="col">Photo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td id="camera"></td>
-                            <td id="lense"></td>
-                            <td id="price"></td>
-                            <td>
-                                <img id="imageUrl" src="http://localhost:3000/images/vcam_1.jpg" style="width: 80px;">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <main class="container mt-5">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Addresse</th>
+                <th scope="col">Ville</th>
+                <th scope="col">mail</th>
+                <th scope="col">N° de commande</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td id="firstName"></td>
+                <td id="lastName"></td>
+                <td id="address"></td>
+                <td id="city"></td>
+                <td id="mail"></td>
+                <td id="orderId"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h1 class="text-white ms-5 mb-4">Votre commande</h1>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Article</th>
+            <th scope="col">Option</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix</th>
+          </tr>
+        </thead>
+        <tbody id="createArray">
+            <tr>
+                <td id="article"></td>
+                <td id="option"></td>
+                <td id="quantity"></td>
+                <td id="price"></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
     </main>
-    <footer>
-        <a href="../testingZone.html">ici</a>
-    </footer>
+    <footer class="pt-5 pb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <p>Contact</p>
+                    <p>FAQ</p>
+                </div>
+                <div class="col">
+                    <p>Politique de confidentialité</p>
+                    <p>Conditions générale de ventes</p>
+                </div>
+                <div class="col">
+                    <p>Politique de retour</p>
+                    <p>© Cartoine</p>
+                </div>
+                <div class="col">
+                    <div class="container">
+                      <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Recherche</button>
+                      </form>
+                    </div>
+              </div>
+            </div>
+        </div>
+      </footer>
     
     <script type="module" src="../Js/ticket.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>

@@ -15,10 +15,9 @@
 
   <header>
     <nav class="navHeader">
-        <a href="../index.html" onClick="reloadPage()">
+        <a href="../index.html">
             <img src="../img/logo.png" class="headerLogo" alt="">
         </a>
-        <!-- <button id="btnReload">refrech</button> -->
         <a href="./cart.html">
         <div class="cadi">
           <span id="count" class="badge shopping">0</span>
@@ -29,43 +28,37 @@
 
 
 <main>
-  <div class="containerProduct">
+  <!-- <div class="containerProduct">
     <div class="col-md-6 container">
       <img id="imageUrl" class="card-img imageUrl" src="../img/cadie.png" alt="Card image cap">
     </div>
     <div class="col-md-6">
       <div class="card-body">
-        <h5 id="cameraName" class="card-title cameraName"></h5>
-        <p id="cameraDescription" class="card-text cameraDescription"></p>
-        <p id="cameraPrices" class="card-text"></p>
+        <h5 id="titre" class="card-title cameraName"></h5>
+        <p class="card-text cameraDescription"></p>
+        <p class="card-text cameraPrices"></p>
         <div  class="d-flex flex-row justify-content-evenly align-content-end mt-5">
           <div>
             <h3>Option choisie</h3>
-            <p id="choise" class="lenseChoise">Choisir un objectif</p>
+            <p id="choise" class="lenseChoise">Choisir un objectif <i class="fas fa-exclamation-triangle "></i></p>
           </div>
           <div class="dropdown justify-content-center d-flex mt-3 mb-3">
-            <button id="lensesOne" class="btn btn-grey lense text-white"></button>
-            <button id="lensesTwo" class="btn btn-grey lense text-white"></button>
-            <button id="lensesThree" class="btn btn-grey lense text-white"></button>
-            <!-- <button class="btn btn-grey dropdown-toggle text-white" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-grey dropdown-toggle text-white" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
               choix de l'objectif
-            </button> -->
-            <!-- <ul id="myListe" class="dropdown-menu dropdown-menu-dark " aria-labelledby="dropdownMenuButton2">
+            </button>
+            <ul id="myListe" class="dropdown-menu dropdown-menu-dark " aria-labelledby="dropdownMenuButton2">
               <li id="lensesOne" class="lense dropdown-item"></li>
               <li id="lensesTwo" class="lense dropdown-item"></li>
               <li id="lensesThree" class="lense dropdown-item"></li>
-            </ul> -->
+            </ul>
           </div>
-          <div class="showBTN">
-            <i id="addToCard" class="fas fa-cart-plus addTo cartBtn"></i>
-            <i id="removeItems" class="fas fa-minus-square cartBtn"></i>
-          </div>
+          <i id="addToCard" class="fas fa-cart-plus addTo"></i>
         </div>
     </div>
-  </div>
+  </div> -->
 </main>
 
-<footer class="pt-5 pb-5">
+<!-- <footer class="pt-5 pb-5">
   <div class="container">
       <div class="row align-items-center">
           <div class="col">
@@ -90,9 +83,9 @@
         </div>
       </div>
   </div>
-</footer>
+</footer> -->
     
-    <script type="module" src="../Js/article.js"></script>
+    <script src="../Js/call.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 </body>

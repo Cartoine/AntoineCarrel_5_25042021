@@ -11,18 +11,29 @@ a {
   text-decoration: none !important;
 }
 
-.bg-grey {
-  background-color: #1b1b1b;
+.headerLogo {
+  width: 150px;
 }
 
+.navHeader {
+  display: flex;
+  /* background-color: aqua; */
+  justify-content: space-between;
+  padding: 30px;
+}
+
+/* .bg-grey {
+  background-color: #1b1b1b;
+} */
+/* pange index */
 .containerSlider {
   padding-top: 20px;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   align-items: center;
 }
 
+/* conainer product */
 .containerSlider h1 {
   color: #fff;
   font-size: 32px;
@@ -33,6 +44,7 @@ a {
   text-align: center;
 }
 
+/* badge d'assurence  */
 .icon {
   color: #fff;
   font-size: 18px !important;
@@ -40,6 +52,19 @@ a {
   margin-top: 5px;
 }
 
+.navbar-brand {
+  margin-top: 5px;
+  font-size: 12px !important;
+}
+
+.badgeContaineur {
+  margin-top: 10px;
+  display: flex;
+  align-items: top;
+  color: #fff;
+}
+
+/* size product card */
 .card {
   width: 18rem;
 }
@@ -62,18 +87,25 @@ a {
   height: 250px !important;
 }
 
-.navbar-brand {
-  margin-top: 5px;
-  font-size: 12px !important;
+/* ProductSheet page */
+.test {
+  font-size: 55px !important;
+}
+.shopping {
+  color: #1b1b1b !important;
+  font-size: 25px !important;
+  text-align: end !important;
+  padding-right: 15px !important;
+  width: 100%;
 }
 
-.badgeContaineur {
-  margin-top: 10px;
-  display: flex;
-  align-items: top;
-  color: #fff;
+.cadi {
+  width: 65px;
+  height: 65px;
+  background-image: url("img/shopping-cart-solid.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-/* ProductSheet page */
 
 .containerProduct {
   color: #fff;
@@ -83,12 +115,7 @@ a {
   margin-bottom: 35px;
 }
 
-.btn-grey {
-  background-color: #1b1b1b !important;
-  border: none !important;
-}
-
-.addTo {
+.cartBtn {
   color: #fff;
   margin: 0px;
   font-size: 40px;
@@ -96,8 +123,8 @@ a {
   margin-top: -20px;
 }
 
-.addTo:hover {
-  color: #1b1b1bf5;
+.cartBtn:hover {
+  color: orange;
   transition: ease-in-out;
   transition-duration: 0.3s;
   margin: 0px;
@@ -105,20 +132,39 @@ a {
   padding-top: 40px;
   margin-top: -20px;
 }
-
-/* je sais pas ce que ca fout la */
-.addToCard {
-  color: #1b1b1b;
-  margin: 0px;
-  font-size: 40px;
-  padding-top: 40px;
-  margin-top: -20px;
+#removeItems {
+  font-size: 28px;
 }
 
+#removeItems:hover {
+  color: red;
+}
+
+#addToCard,
+#removeItems {
+  display: none;
+}
+
+.showBTN {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+
+/* font Awesome */
 .fas {
   font-size: 40px;
 }
 
+.fa-exclamation-triangle {
+  font-size: 20px;
+  margin-left: 20px;
+  color: orange;
+}
+
+/* text color */
 .text-with {
   color: #fff;
 }
@@ -128,24 +174,20 @@ a {
 
 /* Logo header */
 
-.headerLogo {
-  width: 150px;
+/* Bbtn color */
+/* Bbtn color 'choix de l'objectif'*/
+.btn-grey {
+  background-color: #1b1b1b !important;
+  border: none !important;
 }
 
-.navHeader {
-  display: flex;
-  /* background-color: aqua; */
-  justify-content: space-between;
-  padding: 30px;
-}
-
+/* btn 'Rechercher' in footer */
 .btn-outline-success {
   border-color: #fff !important;
   color: #fff !important;
 }
 
 .btn-outline-success:hover {
-  /* border-color: #fff !important; */
   color: #1b1b1b !important;
   background-color: #fff !important;
 }
@@ -156,10 +198,17 @@ table {
 
 footer {
   background-color: #1b1b1b;
-  /* display: flex; */
   justify-content: space-between;
-  /* width: 100%;
-  position: absolute; */
   bottom: 0px;
   color: #fff !important;
+}
+#createArray img {
+  width: 80px;
+}
+/* #imgOne,
+img {
+  width: 30px;
+} */
+td img {
+  width: 30px;
 }
