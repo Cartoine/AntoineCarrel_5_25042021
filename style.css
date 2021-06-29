@@ -22,9 +22,6 @@ a {
   padding: 30px;
 }
 
-/* .bg-grey {
-  background-color: #1b1b1b;
-} */
 /* pange index */
 .containerSlider {
   padding-top: 20px;
@@ -88,9 +85,6 @@ a {
 }
 
 /* ProductSheet page */
-.test {
-  font-size: 55px !important;
-}
 .shopping {
   color: #1b1b1b !important;
   font-size: 25px !important;
@@ -211,4 +205,28 @@ img {
 } */
 td img {
   width: 30px;
+}
+
+@media (max-width: 750px) {
+  .containerProduct {
+    flex-direction: column !important;
+  }
+  .carousel {
+    width: 90% !important;
+  }
+}
+
+.btnChoise {
+  flex-direction: column !important;
+}
+
+.showBTN {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.showBTN i {
+  margin-left: 20px;
+  margin-right: 20px;
 }
