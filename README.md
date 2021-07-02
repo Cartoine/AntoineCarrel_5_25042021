@@ -27,7 +27,7 @@ L’application web sera composée de 4 pages :
         📟 cd AntoineCarrel_5_25042021
         📟 cd API
         📟 npm install express
-        📟 node serveer.js
+        📟 node server.js
 
     Open with live server index.html
 
@@ -44,6 +44,6 @@ L’application web sera composée de 4 pages :
         📟 cd AntoineCarrel_5_25042021
         📟 cd API
         📟 npm install express
-        📟 node serveer.js
+        📟 node server.js
 
     Open with live server index.html
