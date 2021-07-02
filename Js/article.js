@@ -86,7 +86,7 @@ const getValueOfOptionThree = document.getElementById('lensesThree').addEventLis
 // Montre le bouton ajouter au panier
 const showAddToCard = document.getElementById('addToCard');
 
-// retire les options non clicker
+// Affiche le bouton ajouter au panier
 const lensesOne = document.getElementById("lensesOne").addEventListener("click", function() {
     document.getElementById("choise").innerHTML = document.getElementById('lensesOne').textContent;
     showAddToCard.style.display = "block"

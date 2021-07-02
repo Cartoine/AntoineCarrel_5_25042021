@@ -1,13 +1,22 @@
 import {storageParse, camera_one, camera_two, camera_three, camera_four, camera_five } from "./call.js"
 const orderStorageParse = JSON.parse(localStorage.getItem('order'))
 
-const reload = document.getElementById("btnReload").addEventListener("click", function() {
+const removeFromLogo = document.getElementsByClassName("btnReload")[0].addEventListener("click", function() {
     localStorage.removeItem('camera One');
     localStorage.removeItem('camera Two');
     localStorage.removeItem('camera Three');
     localStorage.removeItem('camera Four');
     localStorage.removeItem('camera Five');
 });
+
+const removeFromBtn = document.getElementsByClassName("btnReload")[1].addEventListener("click", function() {
+    localStorage.removeItem('camera One');
+    localStorage.removeItem('camera Two');
+    localStorage.removeItem('camera Three');
+    localStorage.removeItem('camera Four');
+    localStorage.removeItem('camera Five');
+});
+
 
 const firstName = document.getElementById('firstName')
 const lastName = document.getElementById('lastName')
