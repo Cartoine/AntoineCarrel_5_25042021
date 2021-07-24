@@ -1,225 +1,153 @@
-import {storageParse, camera_one, camera_two, camera_three, camera_four, camera_five } from "./call.js"
+// import {storageParse, camera_one, camera_two, camera_three, camera_four, camera_five } from "./call.js"
 
 const reload = document.getElementById("btnReload").addEventListener("click", function() {
-    localStorage.removeItem('camera One');
-    localStorage.removeItem('camera Two');
-    localStorage.removeItem('camera Three');
-    localStorage.removeItem('camera Four');
-    localStorage.removeItem('camera Five');
+    localStorage.removeItem('cameraId');
+    localStorage.removeItem('cart product');
     location.reload()
 });
+const cartProduct = JSON.parse(localStorage.getItem('cart product'))
+console.table(cartProduct)
 
-const storageCameraOne = JSON.parse(localStorage.getItem("camera One"))
-const storageCameraTwo = JSON.parse(localStorage.getItem("camera Two"))
-const storageCameraThree = JSON.parse(localStorage.getItem("camera Three"))
-const storageCameraFour = JSON.parse(localStorage.getItem("camera Four"))
-const storageCameraFive = JSON.parse(localStorage.getItem("camera Five"))
+// vérification si le panier est vide
+if(cartProduct === null || cartProduct.length < 1){
+    let buy = document.getElementById('buy')
+    let backLink = document.getElementById('backLink')
+    buy.style.display = "none"
+    backLink.style.display = "block"
+}
 
-let camera_id = []
+const cartList = document.getElementById('createArray')
+console.log(cartList)
 
-const firstName = document.getElementById('validationDefault01')
-const lastName = document.getElementById('validationDefault02')
-const address = document.getElementById('inputAddress')
-const city = document.getElementById('validationDefault03')
-const email = document.getElementById('inputEmail4')
+for(let i = 0; i< cartProduct.length; i++){
 
-const buy = document.getElementById('buy')
-
-function creatArray() {
+    let createSectionArticle = document.createElement('tr')
+    cartList.appendChild(createSectionArticle)
+    createSectionArticle.classList.add('sectionArticle')
     
-    if(storageCameraOne !== null){
-        const createTdAricle = document.createElement('td')
-        const createTdOption = document.createElement('td')
-        const createTdQuantity = document.createElement('td')
-        const createTdPrice = document.createElement('td')
-        const createTdForImg = document.createElement('td')
-        createTdForImg.id = "imgOne"
-        const createTdImg = document.createElement('IMG')
+    let createName = document.createElement('td')
+    createSectionArticle.appendChild(createName)
+    createName.innerHTML = cartProduct[i].name
+    
+    let createOption = document.createElement('td')
+    createSectionArticle.appendChild(createOption)
+    createOption.innerHTML = cartProduct[i].lense
+    
+    let createQuantity = document.createElement('td')
+    createSectionArticle.appendChild(createQuantity)
+    createQuantity.innerHTML = 1
 
-        const create = document.createElement('tr');
+    let createPrice = document.createElement('td')
+    createSectionArticle.appendChild(createPrice)
+    createPrice.innerHTML = `${(cartProduct[i].price/100).toFixed(2)} €`;
+   
+    
+    let createImg = document.createElement('IMG')
+    createSectionArticle.appendChild(createImg)
+    createImg.id = 'img_cart'
+    createImg.setAttribute('src', cartProduct[i].imageUrl)
+    
+}
 
-        create.id = "create"
-        document.querySelector("tbody").appendChild(create)
-        createTdAricle.innerHTML = camera_one.name
-        createTdOption.innerHTML = storageCameraOne.toCard.lense
-        createTdQuantity.innerHTML = storageCameraOne.toCard.addOneMore
-        createTdPrice.innerHTML = `${(camera_one.price/100)*storageCameraOne.toCard.addOneMore.toFixed(2)} €`;
-        createTdImg.src = camera_one.imageUrl
+let orderForm = document.getElementById('form')
 
-        document.getElementById('create').appendChild(createTdAricle)
-        document.getElementById('create').appendChild(createTdOption)
-        document.getElementById('create').appendChild(createTdQuantity)
-        document.getElementById('create').appendChild(createTdPrice)
-        document.getElementById('create').appendChild(createTdForImg)
-        document.getElementById('imgOne').appendChild(createTdImg)
+orderForm.addEventListener('submit', function(e) {
+    let regexName = /^[a-zA-Z-\s]+$/
+    let regexAdress = /^[a-zA-Z0-9]+/
+    let regexMail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
 
-        camera_id =  storageCameraOne.toCard.id 
-    }
-    if(storageCameraTwo !== null){
-        const createTdAricle = document.createElement('td')
-        const createTdOption = document.createElement('td')
-        const createTdQuantity = document.createElement('td')
-        const createTdPrice = document.createElement('td')
-        const createTdForImg = document.createElement('td')
-        createTdForImg.id = "imgTwo"
-        const createTdImg = document.createElement('IMG')
+    let firstName = document.getElementById('firstName')
+    let lastName = document.getElementById('lastName')
+    let mail = document.getElementById('mail')
+    let city = document.getElementById('city')
+    let adresse = document.getElementById('address')
 
-        const create = document.createElement('tr');
-        create.id = "create2"
+    if(firstName.value.trim() === "" && lastName.value.trim() === ""){
+        let myError = document.getElementById('error')
+        myError.innerHTML = "* Merci de bien remplire le champ"
+        e.preventDefault()
         
-        document.querySelector("tbody").appendChild(create)
-        createTdAricle.innerHTML = camera_two.name
-        createTdOption.innerHTML = storageCameraTwo.toCard.lense
-        createTdQuantity.innerHTML = storageCameraTwo.toCard.addOneMore
-        createTdPrice.innerHTML = `${(camera_two.price/100)*storageCameraTwo.toCard.addOneMore.toFixed(2)} €`;
-        createTdImg.src = camera_two.imageUrl
-
-        document.getElementById('create2').appendChild(createTdAricle)
-        document.getElementById('create2').appendChild(createTdOption)
-        document.getElementById('create2').appendChild(createTdQuantity)
-        document.getElementById('create2').appendChild(createTdPrice)
-        document.getElementById('create2').appendChild(createTdForImg)
-        document.getElementById('imgTwo').appendChild(createTdImg)
-
-        camera_id =  storageCameraTwo.toCard.id 
-    }
-    if(storageCameraThree !== null){
-        const createTdAricle = document.createElement('td')
-        const createTdOption = document.createElement('td')
-        const createTdQuantity = document.createElement('td')
-        const createTdPrice = document.createElement('td')
-        const createTdForImg = document.createElement('td')
-        createTdForImg.id = "imgThree"
-        const createTdImg = document.createElement('IMG')
-
-        const create = document.createElement('tr');
-
-        create.id = "create3"
-        document.querySelector("tbody").appendChild(create)
-        createTdAricle.innerHTML = camera_three.name
-        createTdOption.innerHTML = storageCameraThree.toCard.lense
-        createTdQuantity.innerHTML = storageCameraThree.toCard.addOneMore
-        createTdPrice.innerHTML = `${(camera_three.price/100)*storageCameraThree.toCard.addOneMore.toFixed(2)} €`;
-        createTdImg.src = camera_three.imageUrl
-
-        document.getElementById('create3').appendChild(createTdAricle)
-        document.getElementById('create3').appendChild(createTdOption)
-        document.getElementById('create3').appendChild(createTdQuantity)
-        document.getElementById('create3').appendChild(createTdPrice)
-        document.getElementById('create3').appendChild(createTdForImg)
-        document.getElementById('imgThree').appendChild(createTdImg)
+    }else if (regexName.test(firstName.value) === false){
+        let myError = document.getElementById('error')
+        myError.innerHTML = "* Votre prénom peut contenir des lettres sans accent et des tirets uniquements"
+        e.preventDefault()
         
-        camera_id =  storageCameraThree.toCard.id 
-    }
-    if(storageCameraFour !== null){
-        const createTdAricle = document.createElement('td')
-        const createTdOption = document.createElement('td')
-        const createTdQuantity = document.createElement('td')
-        const createTdPrice = document.createElement('td')
-        const createTdForImg = document.createElement('td')
-        createTdForImg.id = "imgFour"
-        const createTdImg = document.createElement('IMG')
+    }else if(lastName.value.trim() === ""){
+        let myError = document.getElementById('error2')
+        myError.innerHTML = "* Merci de bien remplire le champ"
+        e.preventDefault()
+        
+    }else if (regexName.test(lastName.value) === false){
+        let myError = document.getElementById('error2')
+        myError.innerHTML = "* Votre nom peut contenir des lettres sans accent et des tirets uniquements"
+        e.preventDefault()
+        
+    }else if(mail.value.trim() === ""){
+        let myError = document.getElementById('mailError')
+        myError.innerHTML = "* Merci de bien remplire le champ mail"
+        e.preventDefault()
+        
+    }else if (regexMail.test(mail.value) === false){
+        let myError = document.getElementById('mailError')
+        myError.innerHTML = "* Votre mail doit contenir un \"@\" ainsi qu\'un \".\""
+        e.preventDefault()
+        
+    }else if(city.value.trim() === ""){
+        let myError = document.getElementById('cityError')
+        myError.innerHTML = "* Merci de bien remplire le champ mail"
+        e.preventDefault()      
 
-        const create = document.createElement('tr');
+    }else if (regexAdress.test(city.value) === false){
+        let myError = document.getElementById('cityError')
+        myError.innerHTML = "* Votre mail doit contenir un \"@\" ainsi qu\'un \".\""
+        e.preventDefault()
+        
+    }else if(adresse.value.trim() === ""){
+        let myError = document.getElementById('adressError')
+        myError.innerHTML = "* Merci de bien remplire le champ mail"
+        e.preventDefault()
 
-        create.id = "create4"
-        document.querySelector("tbody").appendChild(create)
-        createTdAricle.innerHTML = camera_four.name
-        createTdOption.innerHTML = storageCameraFour.toCard.lense
-        createTdQuantity.innerHTML = storageCameraFour.toCard.addOneMore
-        createTdPrice.innerHTML = `${(camera_four.price/100)*storageCameraFour.toCard.addOneMore.toFixed(2)} €`;
-        createTdImg.src = camera_four.imageUrl
+    }else if (regexAdress.test(adresse.value) === false){
+        let myError = document.getElementById('adressError')
+        myError.innerHTML = "* Votre mail doit contenir un \"@\" ainsi qu\'un \".\""
+        e.preventDefault()
 
-        document.getElementById('create4').appendChild(createTdAricle)
-        document.getElementById('create4').appendChild(createTdOption)
-        document.getElementById('create4').appendChild(createTdQuantity)
-        document.getElementById('create4').appendChild(createTdPrice)
-        document.getElementById('create4').appendChild(createTdForImg)
-        document.getElementById('imgFour').appendChild(createTdImg)
-
-        camera_id =  storageCameraFour.toCard.id 
-    }
-    if(storageCameraFive !== null){
-        const createTdAricle = document.createElement('td')
-        const createTdOption = document.createElement('td')
-        const createTdQuantity = document.createElement('td')
-        const createTdPrice = document.createElement('td')
-        const createTdForImg = document.createElement('td')
-        createTdForImg.id = "imgFive"
-        const createTdImg = document.createElement('IMG')
-
-        const create = document.createElement('tr');
-
-        create.id = "create5"
-        document.querySelector("tbody").appendChild(create)
-        createTdAricle.innerHTML = camera_five.name
-        createTdOption.innerHTML = storageCameraFive.toCard.lense
-        createTdQuantity.innerHTML = storageCameraFive.toCard.addOneMore
-        createTdPrice.innerHTML = `${(camera_five.price/100)*storageCameraFive.toCard.addOneMore.toFixed(2)} €`;
-        createTdImg.src = camera_five.imageUrl
-
-        document.getElementById('create5').appendChild(createTdAricle)
-        document.getElementById('create5').appendChild(createTdOption)
-        document.getElementById('create5').appendChild(createTdQuantity)
-        document.getElementById('create5').appendChild(createTdPrice)
-        document.getElementById('create5').appendChild(createTdForImg)
-        document.getElementById('imgFive').appendChild(createTdImg)
-
-        camera_id =  storageCameraFive.toCard.id 
-    }
+    }else {
+       
+       let newOrder = {
+            contact :{
+                firstName: firstName.value,
+                lastName: lastName.value,
+                address: address.value,
+                city: city.value,
+                email: mail.value
+            },
+            products: [
+                cartProduct[0]._id
+            ]
+        }
+    
+        //création d'une constante avec l'URL de l'API qui est en POST
+    const postData = fetch("http://localhost:3000/api/cameras/order", {
+    
+        method: "POST",
+        body: JSON.stringify(newOrder),
+        headers: {
+            "Content-Type" : "application/json"
+        }
+            
+    })
+    let responseFromAPI
+    async function promise(){
+            //attends la reponce de l'API et transforme cette rponce en json
+            await postData.then(response => response = response.json())
+        // cette reponce et Stocker dans une variable
+            .then(data => {
+                responseFromAPI = data
+            })
+            localStorage.setItem("order", JSON.stringify(responseFromAPI))
+        }
+    promise()
 }
-creatArray()
 
-let responseFromAPI;
-let newOrder = {
-    contact : {}
-}
-
-const clicked = document.getElementById("buy").addEventListener("click", function() {
-    newOrder = {
-        contact :{
-            firstName: firstName.value,
-            lastName: lastName.value,
-            address: address.value,
-            city: city.value,
-            email: email.value
-        },
-        products: [
-           camera_id
-        ]
-    }
-
-    //création d'une constante avec l'URL de l'API qui est en POST
-const postData = fetch("http://localhost:3000/api/cameras/order", {
-
-    method: "POST",
-    body: JSON.stringify(newOrder),
-    headers: {
-        "Content-Type" : "application/json"
-    }
-     
 })
-async function promise(){
-        //attends la reponce de l'API et transforme cette rponce en json
-       await postData.then(response => response = response.json())
-    // cette reponce et Stocker dans une variable
-       .then(data => {
-           responseFromAPI = data
-        })
-        localStorage.setItem("order", JSON.stringify(responseFromAPI))
-    }
-promise()
-});
-
-let check = document.getElementById('invalidCheck2')
-const open = document.getElementById("buy").addEventListener('click', function(){
-
-    validate()
-})
-function validate() {
-    if (document.getElementById('invalidCheck2').checked) {
-        window.open("ticket.html");
-    } else {
-        alert("Merci de remplire tous le formulaire");
-    }
-}

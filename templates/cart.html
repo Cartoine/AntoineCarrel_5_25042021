@@ -20,14 +20,18 @@
         <a href="../index.html">
         </a>
         <button id="btnReload" class="btn btn-light">Vider le panier</button>
-  
     </nav>
 </header>
 
 <main class="align-content-center justify-content-center containerSlider h-100"> 
     <h1 class="text-white ms-5 mb-4">Votre panier</h1>
+    <a href="../index.html" id="backLink">
+      <div class="mb-5 alertEmptyCart ">
+        <p class="">Votre panier est vide <b>choisir un appareil</b></p>
+      </div>
+    </a>
     <div class="container">
-      <table class="table">
+      <table class="table" id="creatArray">
         <thead>
           <tr>
             <th scope="col">Article</th>
@@ -38,7 +42,6 @@
           </tr>
         </thead>
         <tbody id="createArray">
-
         </tbody>
       </table>
     </div>
@@ -46,50 +49,35 @@
     <div class="container text-with mb-5">
         <div class="row d-flex">
 
-    
-          <form class="row cart col" onsubmit="open">
-            <div class="col-md-4">
-              <label for="validationDefault01" class="form-label" id="test">Prénom</label>
-              <input type="text" class="form-control" id="validationDefault01" placeholder="antoine" required>
+          <form action="ticket.html" id="form" class="row cart col">
+
+            <div class="col-md-6">
+              <label for="validationDefault01" class="form-label">Prénom</label>
+              <input type="text" class="form-control" id="firstName" placeholder="antoine" >
+              <span id="error"></span>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <label for="validationDefault02" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="validationDefault02" placeholder="Carrel" required>
+              <input type="text" class="form-control" id="lastName" placeholder="Carrel" >
+              <span id="error2"></span>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-2">
                 <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="mail@mail.com" required>
+                <input type="text" class="form-control" id="mail" placeholder="mail@mail.com" >
+                <span id="mailError"></span>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-2">
               <label for="validationDefault03" class="form-label">Ville</label>
-              <input type="text" class="form-control" id="validationDefault03" required>
+              <input type="text" class="form-control" id="city">
+              <span id="cityError"></span>
             </div>
-            <div class="col-9">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
-              </div>
-            <div class="col-md-3">
-              <label for="validationDefault04" class="form-label">Livraison</label>
-              <select class="form-select" id="validationDefault04" required>
-                <option selected disabled value="">Livraison</option>
-                <option>Colissimo</option>
-                <option>Chronopost</option>
-                <option>UPS</option>
-                <option>Mondial relay</option>
-              </select>
+            <div class="col-12 mt-2">
+                <label for="inputAddress" class="form-label">Addresse</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" >
+                <span id="adressError"></span>
             </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                <label class="form-check-label" for="invalidCheck2">
-                    <a href="#" class="text-decoration-none text-white">
-                        Accepter les termes et conditions
-                    </a>
-                </label>
-              </div>
-            </div>
-            <div class="col-6">
-              <button id="buy" class="btn btn-primary" type="submit">Acheter</button>
+            <div class="col-12 mt-2">
+              <button id="buy" class="btn btn-primary" type="">Acheter</button>
             </div>
           </form>
         </div>

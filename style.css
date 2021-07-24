@@ -126,16 +126,8 @@ a {
   padding-top: 40px;
   margin-top: -20px;
 }
-#removeItems {
-  font-size: 28px;
-}
 
-#removeItems:hover {
-  color: red;
-}
-
-#addToCard,
-#removeItems {
+#addToCard {
   display: none;
 }
 
@@ -229,4 +221,76 @@ td img {
 .showBTN i {
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.alertContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  margin: 0;
+  top: 10%;
+  position: absolute;
+}
+
+#alert {
+  display: none;
+  width: 50vw;
+  text-align: center;
+  border-style: none;
+  color: #fff;
+}
+.alert-link {
+  color: #fff !important;
+}
+#alertProduct {
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+#cartList {
+  background-color: #fff;
+}
+
+#img_cart {
+  width: 100px;
+}
+
+#form span {
+  color: red;
+}
+
+.alertEmptyCart {
+  background-color: #1b1b1bf5;
+  text-align: center;
+  /* box-shadow: 2px 2px 15px 2px #ff5a5a; */
+  border-radius: 30px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+#backLink {
+  width: 50%;
+  /* margin-bottom: 30px; */
+  color: #fff;
+  font-size: 2vw;
+  display: none;
+}
+
+.alertEmptyCart p {
+  animation-duration: 2s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+@keyframes clignoter {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
