@@ -64,7 +64,7 @@ orderForm.addEventListener('submit', function(e) {
 
     if(firstName.value.trim() === "" && lastName.value.trim() === ""){
         let myError = document.getElementById('error')
-        myError.innerHTML = "* Merci de bien remplire le champ"
+        myError.innerHTML = "* Merci de bien remplire le champ Prénom"
         e.preventDefault()
         
     }else if (regexName.test(firstName.value) === false){
@@ -74,7 +74,7 @@ orderForm.addEventListener('submit', function(e) {
         
     }else if(lastName.value.trim() === ""){
         let myError = document.getElementById('error2')
-        myError.innerHTML = "* Merci de bien remplire le champ"
+        myError.innerHTML = "* Merci de bien remplire le champ nom"
         e.preventDefault()
         
     }else if (regexName.test(lastName.value) === false){
@@ -94,12 +94,12 @@ orderForm.addEventListener('submit', function(e) {
         
     }else if(city.value.trim() === ""){
         let myError = document.getElementById('cityError')
-        myError.innerHTML = "* Merci de bien remplire le champ mail"
+        myError.innerHTML = "* Merci de bien remplire le champ ville"
         e.preventDefault()      
 
     }else if (regexAdress.test(city.value) === false){
         let myError = document.getElementById('cityError')
-        myError.innerHTML = "* Votre mail doit contenir un \"@\" ainsi qu\'un \".\""
+        myError.innerHTML = "* Ce camp ne doit pas contenir de caractère spéciaux"
         e.preventDefault()
         
     }else if(adresse.value.trim() === ""){
@@ -109,7 +109,7 @@ orderForm.addEventListener('submit', function(e) {
 
     }else if (regexAdress.test(adresse.value) === false){
         let myError = document.getElementById('adressError')
-        myError.innerHTML = "* Votre mail doit contenir un \"@\" ainsi qu\'un \".\""
+        myError.innerHTML = "* Votre adresse ne doit pas contenir de \"@\" ainsi que \'de \".\""
         e.preventDefault()
 
     }else {
